@@ -118,3 +118,24 @@ async def filter_results(
         df = df[df["src"] == source]
 
     return {"results": df.to_dict(orient="records")}
+
+
+@router.patch("/results/{task_id}/correct")
+async def manual_correction(task_id: str, text_id: int, new_label: int):
+    """Ручная корректировка метки тональности"""
+    if new_label not in [0, 1, 2]:
+        raise HTTPException(400, "Label must be 0, 1, or 2")
+
+    status = ml_service.get_task_status(task_id)
+    if not status or status["status"] != "completed":
+        raise HTTPException(404, "Results not ready")
+
+    df = status["result"]
+    if text_id < 0 or text_id >= len(df):
+        raise HTTPException(404, "Text ID not found")
+
+    df.loc[text_id, "label"] = new_label
+    df.loc[text_id, "manually_corrected"] = True
+    status["result"] = df
+
+    return {"status": "updated", "text_id": text_id, "new_label": new_label}

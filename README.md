@@ -1,6 +1,26 @@
-# 📊 Анализатор тональности отзывов
+#  Анализатор тональности отзывов
 
 Веб-приложение для автоматической классификации русскоязычных и англоязычных отзывов по тональности с использованием ML-модели на базе XLM-RoBERTa.
+
+## 🌐 Демо
+
+- **Frontend**: https://sentiment-analyzer-demo.vercel.app
+- **Backend API**: https://sentiment-api.onrender.com/docs
+- **Mos.Hub**: https://hub.mos.ru/meloch287/sentiment-analyzer
+
+## 📸 Скриншоты
+
+### Главная страница
+![Home](docs/screenshots/glavnya.jpg)
+
+### Загрузка файла
+![Upload](docs/screenshots/analiz.jpg)
+
+### Dashboard с визуализациями
+![Dashboard](docs/screenshots/dashboard.jpg)
+
+### Результаты анализа
+![Results](docs/screenshots/results.jpg)
 
 ## Возможности
 
@@ -10,19 +30,34 @@
 - Интерактивные визуализации и дашборд
 - Валидация модели с расчётом Macro-F1
 - Экспорт результатов в CSV
+- Ручная корректировка разметки
 
-## Cтарт
+## 📦 Предварительные требования
+
+- Docker и Docker Compose
+- Python 3.11+ (для локальной разработки)
+- Node.js 18+ (для локальной разработки)
+- 4GB RAM минимум
+
+## 🚀 Быстрый старт
 
 ### Docker (рекомендуется)
 
 ```bash
 git clone https://github.com/meloch287/Sentiment-analyzer.git
-cd sentiment-analyzer
-docker-compose up --build
+cd Sentiment-analyzer
+docker compose up --build
 ```
 
+Приложение будет доступно:
 - Frontend: http://localhost:3000
-- Backend API: http://localhost:8000/docs
+- Backend API Docs: http://localhost:8000/docs
+
+### Остановка
+
+```bash
+docker compose down
+```
 
 ### Локальная разработка
 
@@ -311,6 +346,36 @@ curl "http://localhost:8000/api/filter?task_id=550e8400&label=2&source=ozon"
       "confidence": 0.95
     }
   ]
+}
+```
+
+---
+
+### PATCH /api/results/{task_id}/correct
+
+Ручная корректировка метки тональности.
+
+**Request:**
+
+```bash
+curl -X PATCH "http://localhost:8000/api/results/550e8400/correct?text_id=5&new_label=1"
+```
+
+**Parameters:**
+
+| Параметр | Тип | Обязательный | Описание |
+|----------|-----|--------------|----------|
+| task_id | string | Да | ID задачи |
+| text_id | int | Да | Индекс текста в результатах |
+| new_label | int | Да | Новая метка (0, 1, 2) |
+
+**Response:**
+
+```json
+{
+  "status": "updated",
+  "text_id": 5,
+  "new_label": 1
 }
 ```
 
