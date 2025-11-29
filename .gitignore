@@ -16,9 +16,8 @@ dist/
 *.swp
 
 # Data
-*.csv
-!example.csv
-data/
+# *.csv
+# data/
 
 # Models
 *.pt
