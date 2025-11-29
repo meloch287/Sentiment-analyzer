@@ -62,6 +62,16 @@ npm run dev
 
 Frontend: http://localhost:8080
 
+## 🌐 Демо и репозитории
+
+### Основной репозиторий
+- **GitHub**: https://github.com/meloch287/Sentiment-analyzer
+- **Mos.Hub (Правительство Москвы)**: https://hub.mos.ru/meloch287/sentiment-analyzer
+### Live Demo (скоро)
+- **Frontend**: -
+- **Backend API**: -
+
+
 ## 📸 Скриншоты
 
 ### Главная страница
