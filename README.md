@@ -2,26 +2,6 @@
 
 Веб-приложение для автоматической классификации русскоязычных и англоязычных отзывов по тональности с использованием ML-модели на базе XLM-RoBERTa.
 
-## 🌐 Демо
-
-- **Frontend**: https://sentiment-analyzer-demo.vercel.app
-- **Backend API**: https://sentiment-api.onrender.com/docs
-- **Mos.Hub**: https://hub.mos.ru/meloch287/sentiment-analyzer
-
-## 📸 Скриншоты
-
-### Главная страница
-![Home](docs/screenshots/glavnya.jpg)
-
-### Загрузка файла
-![Upload](docs/screenshots/analiz.jpg)
-
-### Dashboard с визуализациями
-![Dashboard](docs/screenshots/dashboard.jpg)
-
-### Результаты анализа
-![Results](docs/screenshots/results.jpg)
-
 ## Возможности
 
 - Автоматическая классификация текстов на 3 класса: негативный, нейтральный, позитивный
@@ -81,6 +61,23 @@ npm run dev
 ```
 
 Frontend: http://localhost:8080
+
+## 📸 Скриншоты
+
+### Главная страница
+![Home](docs/screenshots/glavnya.jpg)
+
+### Загрузка файла
+![Upload](docs/screenshots/analiz.jpg)
+
+### Dashboard с визуализациями
+![Dashboard](docs/screenshots/dashboard.jpg)
+
+### Результаты анализа
+![Results](docs/screenshots/results.jpg)
+
+
+
 
 ## 📁 Структура проекта
 
