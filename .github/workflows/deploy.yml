@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build images
-        run: docker-compose build
+        run: docker compose build
       - name: Login to Registry
         if: github.event_name == 'push'
         run: echo "Add your registry login here"
