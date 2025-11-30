@@ -67,6 +67,7 @@ Frontend: http://localhost:8080
 ### Основной репозиторий
 - **GitHub**: https://github.com/meloch287/Sentiment-analyzer
 - **Mos.Hub (Правительство Москвы)**: https://hub.mos.ru/meloch287/sentiment-analyzer
+- **Видео**: https://drive.google.com/drive/folders/1RL4PGZWZIGdOpgS_NeVnoRwgPQq6DPbo?usp=sharing
 ### Live Demo (скоро)
 - **Frontend**: -
 - **Backend API**: -
